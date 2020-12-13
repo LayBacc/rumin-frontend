@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Idea Validated</title>
+
+	  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	  <!-- Bootstrap CSS File -->
+	  <link href="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	  <link href="{% static "frontend/style.css" %}" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+     <link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/rumin-gcs-bucket/favicon2.png"/>
+
+	  <!-- nav -->
+	  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+
+  <body>
+	<style>
+	.dropdown-menu li.list-item {
+	  padding: 0.5em 0;
+	}
+
+	/*.dropdown-menu li.list-item a:hover {
+	  background-color: #CBE6FF;
+	}*/
+
+	.dropdown-menu .divider {
+	  height: 1px;
+	  background-color: #ccc;
+	}
+	 
+	.btn-signup:hover {
+	  background-color: #ccc;
+	}
+
+	.formkit-form {
+		max-width: 100%;
+	}
+
+  .pricing-tier-panel {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1em;
+    height: 420px;
+  }
+
+  .pricing-tier-panel ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .faq-question {
+    padding: 1em 0;
+    border-bottom: 1px solid #ddd;
+  } 
+
+  .faq-answer {
+    margin-top: 1em;
+  }
+
+  .question-text {
+    font-size: 1.2em;
+    cursor: pointer;
+  } 
+
+	</style>
+	   {% load user_agents %}
+
+		
+  {% include 'frontend/vaas_header.html' %}
+
+  <div class="container blog-content" style="padding-top: 12vh;">
+  	<div class="text-center">
+      <div class="" style="margin-bottom: 6em;">
+        <div class="col-lg-10 mx-auto ">
+      		<h1 class="mb-4 text-center">Your product idea, properly validated</h1>
+
+      		<h4 class="mb-4">Talking to users is crucial. But it is time-consuming and tricky to get right.</h4>
+
+      		<h4>Let us take care of that.</h4>
+
+          <div class="text-center mt-4 mb-4">
+            <a href="#contact" class="btn btn-primary nav-contact" style="font-size: 1.3em; border-radius: 6px;">
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-10 mx-auto text-left" style="margin-bottom: 4em;">
+        <h4 class="mb-4 text-center">Building the wrong product is costly</h4>
+        <p>We help you save <strong>months of engineering time</strong> and <strong>tens of thousands of dollars</strong> using proven methodologies. Our expert team has years of experience conducting hundreds of user interviews.</p>
+        <!-- <p>Our expert team has conducted hundreds of user interviews, and helps you validate your idea within a week.</p> -->
+      </div>
+
+  		<p></p>
+
+
+  		<div class="row text-left" style="margin-bottom: 4em;">
+        <div class="col-lg-4">
+          <div class="pricing-tier-panel">
+            <div class="mb-4">
+              <h5>Basic</h5>
+              <small>Ensure you are solving a real problem</small>
+            </div>
+
+            <div>
+              <h4 class="inline-block">$199 </h4><!-- <small class="gray-text">/ month</small> -->
+            </div>
+
+            <!-- <div class="text-center mt-4 mb-4">
+              <a href="/access_requests/new?tier=free" class="btn btn-secondary nav-contact">
+                Get in touch
+              </a>
+            </div> -->
+
+            <ul>
+              <li>
+                <i class="fa fa-check"></i> Basic targeting
+              </li>
+              <li>
+                <i class="fa fa-check"></i> 5 user interviews
+              </li>
+              <li>
+                <i class="fa fa-check"></i> One week turnaround
+              </li>
+              <li>
+                <i class="fa fa-check"></i>
+                Opt-in user follow-up
+              </li>
+              <li>
+                <i class="fa fa-check"></i> Research report with suggestions
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-tier-panel">
+            <div class="mb-4">
+              <h5>Pro</h5>
+              <small>Hit the ground running with the idea</small>
+            </div>
+
+            <div>
+              <h4 class="inline-block">$299 </h4><!-- <small class="gray-text">/ month</small> -->
+            </div>
+
+            <!-- <div class="text-center mt-4 mb-4">
+              <a href="/access_requests/new?tier=pro" class="btn btn-blue nav-contact">
+                Get in touch
+              </a>
+            </div> -->
+
+            <ul>
+              <li>Everything in Basic, plus</li>
+              <li>
+                <i class="fa fa-check"></i>
+                10 user interviews
+              </li>
+              <li>
+                <i class="fa fa-check"></i>
+                Custom validation plan
+              </li>
+              <li>
+                <i class="fa fa-check"></i>
+                Hand-off over video call 
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-tier-panel">
+            <div class="mb-4">
+              <h5>Premium</h5>
+              <small>For deeper and more specific needs</small>
+            </div>
+
+            <div>
+              <h5 class="inline-block">Contact us </h5>
+            </div>
+
+            <!-- <div class="text-center mt-4 mb-4">
+              <a href="/access_requests/new?tier=team" class="btn btn-secondary nav-contact">
+                Get in touch
+              </a>
+            </div> -->
+
+            <ul>
+              <li class="no-style">Everything in Pro, plus</li>
+              <li>
+                <i class="fa fa-check"></i>
+                User interviews with a larger audience
+              </li>
+              <li>
+                <i class="fa fa-check"></i>
+                Iterations on the idea being tested
+              </li>
+              <li>
+                <i class="fa fa-check"></i>
+                Market intelligence research
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+	  	<!-- <p>Test before you invest</p> -->
+
+  		<div class="mb-4 col-lg-6 mx-auto">
+        <div id="contact" class="" style="margin-bottom: 4em;">
+          <h4 class="mb-4">Let's do this.</h4>
+
+        	<script async data-uid="41c8b98069" src="https://artisanal-author-9219.ck.page/41c8b98069/index.js"></script>
+        </div>
+	  	</div>
+
+      <div class="mb-4 col-lg-9 mx-auto">
+        <div id="faq" class="" style="margin-bottom: 8em;">
+          <h2 class="mb-4">FAQ</h2>
+
+          <div class="text-left">
+            <div class="faq-question">
+              <div class="question-text">Where do you find users for the interviews?</div>
+              <div class="faq-answer">We are personally targeting and vetting users using a variety of social and community platforms, as well as our diverse network.</div>
+            </div>
+
+            <div class="faq-question">
+              <div class="question-text">How long is each interview?</div>
+              <div class="faq-answer">Each 1-1 user interview we conduct with the user is about 20-30 minutes long.</div>
+            </div>
+
+
+            <div class="faq-question">
+              <div class="question-text">Can I contact the users for follow up questions or updates?</div>
+              <div class="faq-answer">Yes, if the user has opted in for follow ups. At the end of each interview, we ask the user if they would like to hear more about the development of the project.</div>
+            </div>
+
+            <div class="faq-question">
+              <div class="question-text">Do you include surveys in the research?</div>
+              <div class="faq-answer">No. From our experience, surveys are not the right tool for validating early ideas. Worse yet, they can give dangerous false positives that lead you down the wrong path.</div>
+            </div>
+
+            <div class="faq-question">
+              <div class="question-text">What type of products/services you cover?</div>
+              <div class="faq-answer">
+                We have worked with a variety of products, including web/mobile applications for both consumers and B2B products. Depending on your needs, we may be able to help with physical products as well.
+              </div>
+            </div>
+
+          </div>       
+        </div>
+      </div>
+  	</div>
+  </div>
+
+    <!-- Template Main JS File -->
+  <script src="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/js/main.js"></script>
+
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=b1fc7db6-0aa3-4528-b257-add77901603c"> </script>
+
+  {% if not debug %}
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172756954-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-172756954-1');
+		</script>
+  {% endif %}
+
+  </body>
+
+  <script type="text/javascript">
+    $(function() {
+      $('.faq-answer').hide()
+
+      $('.question-text').click((e) => {
+        $(e.target).siblings('.faq-answer').show()//.slideDown('fast')
+      })
+    })
+  </script>
+</html>

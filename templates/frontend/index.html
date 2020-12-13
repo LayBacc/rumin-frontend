@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <link rel="search" href="https://www.getrumin.com/opensearch.xml" type="application/opensearchdescription+xml" title="Rumin"/>
+  
+  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/rumin-gcs-bucket/static/frontend/react-datepicker.css">
+
+  <div id="rumin_body">
+    <!-- React will load here -->
+  </div>
+
+  {% load static %}
+
+  <!-- Full story -->
+  {% if not debug %}
+    <script>
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+    window['_fs_org'] = 'WD521';
+    window['_fs_namespace'] = 'FS';
+    (function(m,n,e,t,l,o,g,y){
+        if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+        g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+        o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+        y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+        g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+        g.anonymize=function(){g.identify(!!0)};
+        g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+        g.log = function(a,b){g("log",[a,b])};
+        g.consent=function(a){g("consent",!arguments.length||a)};
+        g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+        g.clearUserCookie=function(){};
+        g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+        if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+        g._v="1.2.0";
+    })(window,document,window['_fs_namespace'],'script','user');
+
+    if (window.django.user.is_authenticated) {
+        FS.identify(window.django.user.id)
+      }
+    </script>
+
+  {% endif %}
+  
+
+  <!-- Segment -->
+  {% if not debug %}
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load("trjI3koyx082gtws6ynKGsdEjjtVKzbq");
+      analytics.page();
+
+      if (window.django.user.is_authenticated) {
+        analytics.identify(window.django.user.id, window.django.user)
+      }
+    }();
+    </script>
+  {% endif %}
+
+  <!-- Amplitude -->
+  {% if debug %}
+    <script type="text/javascript">
+      (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+      ;r.type="text/javascript"
+      ;r.integrity="sha384-3bSR/uIgD42pCWBeq1//B3mI/hPuWdk0L1EUnQIWfGyMOjs0VEoFLhHMqObtv2BA"
+      ;r.crossOrigin="anonymous";r.async=true
+      ;r.src="https://cdn.amplitude.com/libs/amplitude-5.10.0-min.gz.js"
+      ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+      console.log("[Amplitude] Error: could not load SDK")}}
+      ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+      ;function s(e,t){e.prototype[t]=function(){
+      this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+      var o=function(){this._q=[];return this}
+      ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+      ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+      ;return this}
+      ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+      ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+      ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId", "enableTracking", "setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+      ;function v(e){function t(t){e[t]=function(){
+      e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+      for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+      e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+      ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+      ;e.amplitude=n})(window,document);
+
+      if (window.django.user.is_authenticated) {
+      	amplitude.getInstance().init("ad9d7eb76ea6f38971c4665e607185ff", window.django.user.id);
+      }
+      else {
+      	amplitude.getInstance().init("ad9d7eb76ea6f38971c4665e607185ff");
+      }
+    </script>
+  {% else %}
+    <script type="text/javascript">
+      (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+      ;r.type="text/javascript"
+      ;r.integrity="sha384-3bSR/uIgD42pCWBeq1//B3mI/hPuWdk0L1EUnQIWfGyMOjs0VEoFLhHMqObtv2BA"
+      ;r.crossOrigin="anonymous";r.async=true
+      ;r.src="https://cdn.amplitude.com/libs/amplitude-5.10.0-min.gz.js"
+      ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+      console.log("[Amplitude] Error: could not load SDK")}}
+      ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+      ;function s(e,t){e.prototype[t]=function(){
+      this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+      var o=function(){this._q=[];return this}
+      ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+      ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+      ;return this}
+      ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+      ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+      ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId", "enableTracking", "setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+      ;function v(e){function t(t){e[t]=function(){
+      e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+      for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+      e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+      ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+      ;e.amplitude=n})(window,document);
+
+      if (window.django.user.is_authenticated) {
+        amplitude.getInstance().init("3699e560e27584625f70bfd382338902", window.django.user.id)
+      }
+      else {
+        amplitude.getInstance().init("3699e560e27584625f70bfd382338902")
+      }
+    </script>
+  {% endif %}
+
+
+  <script src="{% static "frontend/main.js" %}"></script>
+{% endblock content %}

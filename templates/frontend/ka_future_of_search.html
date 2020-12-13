@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Artist</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="{% static "frontend/style.css" %}" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+     <link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/rumin-gcs-bucket/favicon2.png"/>
+
+    <!-- nav -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <style>
+  .dropdown-menu li.list-item {
+    padding: 0.5em 0;
+  }
+
+  /*.dropdown-menu li.list-item a:hover {
+    background-color: #CBE6FF;
+  }*/
+
+  .dropdown-menu .divider {
+    height: 1px;
+    background-color: #ccc;
+  }
+   
+  .btn-signup:hover {
+    background-color: #ccc;
+  }
+
+  </style>
+     {% load user_agents %}
+
+
+  {% include 'frontend/ka_header.html' %}
+  
+
+  <div class="container blog-content" style="padding-top: 18vh;">
+    <div class="text-center">
+      <h1 class="mb-5">The Next Frontiers of Search</h1>
+
+      <div class="col-md-9 mx-auto text-left">
+        <p>A quick introduction: I have spent quite some time working on (and daydreaming about) search, and mapping human knowledge. Both as a PM at <a target="_blank" href="https://www.google.com/search?q=bing">Bing</a>, and with my current projects with <a target="_blank" href="https://getrumin.com/">Rumin</a>.</p>
+        <p>This post is more speculations about the future and plausible paths to get there, than a rigorous research report. If you are interested in the latter, <a target="_blank" href="mailto:john@knowledgeartist.org">email me</a> or <a target="_blank" href="https://twitter.com/jhlyeung">tweet at me @jhlyeung</a>.  </p>
+        <h3 class="mt-5">Search engines today</h3>
+        <p>Today, a vast amount of content that is available in public can be looked up within miliseconds.</p>
+        <p>In addition to the 10 blue links on the results page, search engines also provide: </p>
+        <li>Instant answers and question answering, e.g. &quot;<a target="_blank" href="https://www.google.com/search?q=weather+in+toronto">weather in Toronto today</a>&quot;,  &quot;<a target="_blank" href="https://www.bing.com/search?q=MSFT+stock+price">MSFT stock price</a>&quot;, &quot;<a target="_blank" href="https://www.google.com/search?q=who+is+the+president+of+the+u">Who is the president of the US?</a>&quot;</li>
+        <li>Voice assistants reading instant answers, playing the wrong song on Spotify, turning on lights to flex in front of your guests</li>
+        <p>It is an impressive feat of engineering, and has been great for answering simple questions and looking up facts. But what lies ahead if we dare imagine the future possibilities?</p>
+        <h3 class="mt-5">No search at all</h3>
+        <p>To get the piece of information you are looking for, going to google.com can sometimes feel like a hassle. A few clicks each time, plus the context switching, can add up in terms of time costs. </p>
+        <p>A more desirable experience is to have the knowledge delivered to you, to whatever app or workspace you are in. So that you can get the information and resume what you are doing.</p>
+        <p>You already see patterns like this today, where there many entry points to the search engine:</p>
+        <li>The url address bar in the browser doubles as a search box</li>
+        <li>The browser &quot;New tab&quot; page has a search box</li>
+        <li>Operating systems have a search box: Spotlight on Mac. Cortana on Windows. Same deal on mobile</li>
+        <li>&quot;Smart lookup&quot; in Microsoft Office products</li>
+        <p>One day, we shall see a reincarnation of Clippy. One day.</p>
+        <p>The idea is that you want the information the moment you need it. We will find more and more ways to eliminate the friction that stands between you and what you are searching. </p>
+        <p>This brings us to our next point - searching across apps.</p>
+        <h3 class="mt-5">Intent understanding. Information layer across apps &amp; contexts</h3>
+        <p>Everyone has experienced some version of trying to find a document or message across emails, instant messages, cloud storage, notes etc.</p>
+        <p>At the time of writing, this is still largely the case. Though there are a sea of big companies and startups alike working on solving this. It is a rather straightforward problem of integrating with various data sources and indexing the content. </p>
+        <p>So it is probably safe to expect this to be less of an issue over time.</p>
+        <p>We would always be looking for shortcuts to get what we are looking for, faster. This is a part of a much bigger trend of automation and connected apps, which is not limited to search. </p>
+        <p>But search engines, as a general-purpose intent understanding machine, have a big role to play in this. We can expect to see more deep links and actions being accessible from a central interface. Alexa playing your favorite podcast is only the beginning. </p>
+        <h3 class="mt-5">Querying huge, generative language models</h3>
+        <p>When you have a question, the most natural thing to do for most people is to ask someone. </p>
+        <p>When Google came along and became a verb, the convention became to just ask the Googs. Sure there are still loads of questions it can&#39;t answer, that a real person can. But it&#39;s good enough. And it&#39;s instant.</p>
+        <p>That could very well change in the near future. Generative language models that are trained a huge corpus of human-generated data on the internet can spit out answers that are often as good as a real human&#39;s response.</p>
+        <p>At the time of writing, OpenAI recently released an API to its latest GPT-3 model. From all the anecdotes I have read, it seems it is pretty darn good! Generating a general purpose human-like response seems to good enough to be usable. </p>
+        <p>It does seem too far for a language model to do what the search engine currently does, provided that it can:</p>
+        <li>Map the generated output to a credible source. This would address the &quot;black box&quot; concerns that people have.</li>
+        <li>Refresh content - &quot;index&quot; and &quot;train&quot; on fresh content. This is similar to how a human being would &quot;stay updated&quot; by reading the news and having conversations. </li>
+        <p>When that happens, perhaps we wouldn&#39;t even call it a search engine. Would &quot;oracle&quot; seem more apt?</p>
+        <h3 class="mt-5">Indexing the unindexed knowledge</h3>
+        <p>Both search engines and large language models rely on crawled data on the web. This means the scope of their knowledge and capabilities are limited to that dataset. </p>
+        <p>In particular, the limitations include: </p>
+        <li>The content must be published somewhere on the web, and is publicly available. This excludes the wealth private and individual knowledge.</li>
+        <li>Data on the web is predominantly text. Which means scope is limited to whatever can be expressed in natural language. There is a tremendous amount of implicit or tacit knowledge that is hard to transfer verbally.</li>
+        <li>Content tends to be shallow. There are countless domains of knowledge that are still not very legible and accessible, even for humans.</li>
+        <p>Given the limitations, here are a few exciting areas of development:</p>
+        <li>Indexing private knowledge, and integrating it with the collective public knowledge. </li>
+        <li>Better UIs and formats, to help externalize and digitze complex ideas that are hard to convey in plain text.</li>
+        <li>Represent and map out the deep knowledge in each field.</li>
+        <p>That covers the knowledge side of things. But so much of the human condition isn&#39;t about just knowing...</p>
+        <h3 class="mt-5">Indexing perception, emotions, and experiences  </h3>
+        <p>What we know accounts for just a small fraction of our conscious experience. There are myriad sensations that are hard to even find words for. This is especially true for experiences in altered states - for instance, from meditation, bodily movements, or consuming substances.</p>
+        <p>But what if we can enlist the help of machines to map out and navigate how we feel? Can we index an emotional experience and construct a sequence of steps to recreate or revisit this moment?</p>
+        <p>This sounds incredibly challenging. And by this point we are venturing quite far into the future. It would be fun though, to entertain a few possibilities. </p>
+        <p>It helps to recognize that we already have reliable heuristics, in various domains of art, that roughly predict what our experiences will be like. Eating ice cream on a hot summer day is satisfying. Stomping backbeats make music easy to dance to. Symmetry is generally pleasing to the eye. Exercising makes you tired in the moment, and you feel good at night.</p>
+        <p>These broad stroke heuristics are distilled from many instances of trial-and-error and observations. What happens if we more systematically gather data at scale and analyze it?</p>
+        <p>We could in principle achieve fine-grained predictions and control of human experiences: in terms of precision in time, evoking the exact sensation desired, and personalization.</p>
+        <p>In this setup, the role of human beings would be sensors and interpreters, while machines maintain and find patterns in the collective data.</p>
+        <p>Perhaps soon enough, we would be able to guess the inner state of any person, based on known information about the sequence of inputs and stimuli in the current environment. And the machine can construct a model of the person&#39;s mind, as a time-series sequence of perceptual frames, with each frame being a digital representation (say, an embedding) of the sensation.</p>
+        <p>This is a good place to wrap. I will elaborate and flesh out some of the themes above in future posts. </p>
+        <p>What an exciting world we live in!</p>
+        <div class="mt-4 mb-4">
+            <script async data-uid="51f7af89f4" src="https://artisanal-author-9219.ck.page/51f7af89f4/index.js"></script>
+          </div>  
+      </div>
+
+      
+
+      <!-- <div class="divider"></div>
+
+      <div>
+        <h4>My travels</h4> 
+      </div> -->
+    </div>
+  </div>
+
+    <!-- Template Main JS File -->
+  <script src="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/js/main.js"></script>
+
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=b1fc7db6-0aa3-4528-b257-add77901603c"> </script>
+
+  {% if not debug %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172756954-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-172756954-1');
+    </script>
+  {% endif %}
+
+  </body>
+</html>
+
+

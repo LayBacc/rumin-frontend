@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Artist</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <meta name="description" content="Collections of essays covering a wide range of topics: language learning, starting a business, making art, and more.">
+    <meta name="keywords" content="knowledge artist, essays, learning, lifestyle design, mental model, art, john yeung">
+
+    <link rel="canonical" href="https://knowledgeartist.org/articles" />
+
+    <!-- Bootstrap CSS File -->
+    <link href="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="{% static "frontend/style.css" %}" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+     <link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/rumin-gcs-bucket/favicon2.png"/>
+
+    <!-- nav -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <style>
+  .dropdown-menu li.list-item {
+    padding: 0.5em 0;
+  }
+
+  .btn {
+    margin-bottom: 0.5em;
+  }
+
+  .btn.active {
+    background-color: #eff7ff;
+  }
+
+  /*.dropdown-menu li.list-item a:hover {
+    background-color: #CBE6FF;
+  }*/
+
+  .dropdown-menu .divider {
+    height: 1px;
+    background-color: #ccc;
+  }
+   
+  .btn-signup:hover {
+    background-color: #ccc;
+  }
+
+  .list-article {
+    padding: 1em 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+  }
+
+  a.list-article-link {
+    text-decoration: none;
+    color: #333;
+  }
+
+
+  .list-article:hover {
+    color: #999;
+  }
+
+  </style>
+
+  {% load user_agents %}
+
+  {% include 'frontend/ka_articles_data.html' %}
+
+  {% include 'frontend/ka_header.html' %}
+  
+
+  <div class="container blog-content" style="padding-top: 18vh;">
+    <div class="text-center">
+      <h1 class="mb-5">Essays</h1>
+
+      <div class="col-md-9 mx-auto text-left mb-4">
+        <h5 class="mb-3">Categories</h5>
+
+        <div class="category-btns">
+          <div class="btn category-btn mr-1 active" data-category="all">All</div>
+          <div class="btn category-btn mr-1" data-category="knowledge">Knowledge</div>
+          <div class="btn category-btn mr-1" data-category="automation">Automation</div>
+          <div class="btn category-btn mr-1" data-category="entrepreneurship">Entrepreneurship</div>
+          <div class="btn category-btn mr-1" data-category="life">Life</div>
+          <div class="btn category-btn mr-1" data-category="food">Food</div>
+          <div class="btn category-btn mr-1" data-category="future">The Future</div>
+          <div class="btn category-btn mr-1" data-category="music">Music</div>
+          <div class="btn category-btn mr-1" data-category="language">Language learning</div>
+          <!-- <div class="btn category-btn mr-1" data-category="music-production">Music production</div> -->
+          <div class="btn category-btn mr-1" data-category="productivity">Productivity</div>
+        </div>
+      </div>
+
+      <div class="col-md-9 mx-auto text-left mb-4">
+        
+        <div class="mb-5">
+          <input 
+            id="articles_search"
+            class="collection-filter" 
+            placeholder="Type to filter" 
+          />
+          <i class="fa fa-search" style="margin-left: -25px"></i>
+        </div>
+      </div>
+
+      <div id="articles_section" class="col-md-9 mx-auto text-left mb-5">
+        <h4 class="mb-4"><a href="/articles/243ee23e-0dfd-4b94-8b77-0216269b37f6/the-next-frontiers-of-search">The Next Frontiers of Search</a></h4>  
+
+        <h4 class="mb-4"><a href="/articles/735785b0-07eb-4f51-8fc9-f8889fbb954b/mapping-the-podcast-ecosystem">Mapping the Podcast Ecosystem</a></h4>      
+        
+        <h4 class="mb-4"><a href="/articles/747efd5b-ab1d-492f-8dfb-d56aba761617/ongoing-collection-of-contradictory-advice-for-founders">Ongoing Collection of Contradictory Advice for Founders</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/5c7d1b06-1128-4e28-af28-ed07b94a2335/the-swiss-army-knife-for-getting-overwhelmed-less">The Swiss Army Knife for Getting Overwhelmed Less</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/fbd09646-e750-48fd-a90f-7f8fb9b6f456/everything-i-learned-starting-a-6000mo-dropshipping-business">Everything I learned starting a $6000/mo dropshipping business</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/83bfed0d-aa28-448d-a776-62bcf713e736/start-something-start-something-stupid">Start something. Start something stupid</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/ff35a372-94b1-4168-b97c-92fc0548a70a/farming-luck-with-a-portfolio-of-small-bets">Farming luck with a portfolio of small bets</a></h4>
+        
+        <h4 class="mb-4"><a href="/articles/8fdbb334-a9f7-4d4c-ab46-ca1c915280f5/a-good-croissant-makes-any-day-better">The Croissant Way of Life</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/45f0e467-ab1e-4708-847c-e7f717683687/do-what-gives-you-energy-a-simple-rule-for-life">Do What Gives You Energy - A Simple Rule for Life</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/1021e2dc-845a-494f-b598-def49c37234e/how-long-does-it-take-to-learn-a-language">How Long Does It Take to Learn a Language?</a></h4>
+
+        <h4 class="mb-4"><a href="/articles/64b01dcd-1890-4817-9887-42fb9575614c/what-is-zettelkasten">What is Zettelkasten</a></h4>
+      </div>
+    </div>
+  </div>
+
+    <!-- Template Main JS File -->
+  <script src="https://storage.googleapis.com/rumin-gcs-bucket/static/pages/js/main.js"></script>
+
+  {% if not debug %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172756954-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-172756954-1');
+    </script>
+  {% endif %}
+
+  <script type="text/javascript">
+    const getJsonFromUrl = (url) => {
+      if(!url) url = location.search;
+      var query = url.substr(1);
+      var result = {};
+      query.split("&").forEach(function(part) {
+        var item = part.split("=");
+        result[item[0]] = decodeURIComponent(item[1]);
+      });
+      return result;
+    }
+
+    const params = getJsonFromUrl()
+
+    window.category = params.category || ''
+    window.query = ''
+
+    if (params.category) {
+      $('.category-btn').removeClass('active')
+      $('.category-btn[data-category="' + params.category + '"]').addClass('active')
+
+    }
+
+    const filteredArticles = () => {
+      let results = window.articles
+      
+      if (window.category.length > 0 && window.category !== 'all') {
+        results = results.filter(article => article.categories.includes(window.category))
+      }
+      // console.log('filteredArticles', window.query)
+
+      return results.filter(article => {
+        return article.title.toLowerCase().includes(window.query.toLowerCase()) || article.description.toLowerCase().includes(window.query.toLowerCase())
+      })
+    }
+
+    const renderFilteredArticles = () => {
+      return filteredArticles().map(article => {
+        return(`
+          <a href="${ article.url }" class="list-article-link">
+            <div class="list-article">
+              <h4 class="mb-4">${ article.title }</h4>
+              <div class="divider"></div>
+              <p>${ article.description || '' }</p>
+            </div>
+          </a>
+        `)
+      })
+    }
+
+    const updateArticles = () => {
+      $('#articles_section').html(renderFilteredArticles())
+    }
+
+    $('.category-btn').click((e) => {
+      $('.category-btn').removeClass('active')
+      $(e.target).addClass('active')      
+
+      window.category = $(e.target).data('category')
+      updateArticles()
+      
+      // update the url 
+      window.history.pushState('', '', '?category=' + window.category)
+    })
+
+    $('#articles_search').keyup(() => {
+      window.query = $('#articles_search').val()
+      updateArticles()
+    })
+
+    $(function() {
+      updateArticles()
+    })
+  </script>
+
+  </body>
+</html>
+
+

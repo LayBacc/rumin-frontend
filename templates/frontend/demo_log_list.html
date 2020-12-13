@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rumin</title>
+
+    {% load static %}
+    <link href="{% static "frontend/style.css" %}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+  	<div id="rumin_body">
+  		
+  	</div>
+
+    <!-- {% include 'collections_pane.html' %}
+
+    <div class="main-content">
+    	{% include 'search_section.html' %}
+
+		  <div class="log-page">
+			  <div class="main-line">
+			  	<div class="list-item" style="border-bottom: 10px solid #f0f0f0;">
+			  		<textarea class="new-entry" placeholder="What's on your mind?"></textarea>
+			  		<div class="controls" style="display: flex; align-items: center;">
+			  			<div class="control">
+			  				<i class="fa fa-image"></i>
+			  			</div>
+			  			<div class="control">
+			  				<i class="fa fa-folder"></i>
+			  			</div>
+			  			<div class="save-btn">Save</div>
+			  		</div>
+			  	</div>
+
+				  <div class="list-item">
+				  	<img src="https://secureservercdn.net/198.71.233.214/aa7.834.myftpupload.com/wp-content/uploads/2019/04/cropped-HTN-fav-32x32.png" class="icon"> 
+				  	Web <span class="block-timestamp">  &nbsp;· Today 3:46 PM</span>
+				  	<div class="title">
+				  		<a href="#">Who is the Hotel Guest of 2020? (Infographic)</a>
+				  	</div>
+				  	<div class="url">https://hoteltechnologynews.com/2019/02/who-is-the-hotel-guest-of-2020-infographic/</div>
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+
+				  <div class="list-item">
+				  	<span class="block-timestamp">Today 3:33 PM</span>
+				  	<div class="title">
+				  		Observations from <a href="#">User Interview</a>
+				  	</div>
+				  	<div class="controls">
+				  		<a href="#">Show more <img src="https://static.thenounproject.com/png/1916332-200.png" style="width: 16px; vertical-align: middle;"></a>
+				  	</div>
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+
+				  <div class="list-item">
+				  	<img src="https://static.thenounproject.com/png/917610-200.png" class="icon">&nbsp;
+				  	Screenshot <span class="block-timestamp">  &nbsp;·Today 3:19 PM</span>
+				  	<div class="captured-img">
+				  		<img src="https://a.slack-edge.com/80588/marketing/img/downloads/screenshots/win10_screenshot.IN.png" />
+				  	</div>
+
+				  	<div class="url">https://app.slack.com/client/TTWGHAWKX/DTYBVMBUP</div>
+
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+
+				  <div class="list-item">
+				  	<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="icon">&nbsp;
+				  	Gmail <span class="block-timestamp">  &nbsp;· Today 2:51 PM</span>
+				  	<div class="title">
+				  		<a href="#">Experiences team update - week of 2/3</a>
+				  	</div>
+				  	<div class="url">https://mail.google.com/.../FMfcgxwGCbJBpRRQnxGzGvgxFpCpxkDt</div>
+				  	<div class="controls">
+				  		<a href="#">Show more <img src="https://static.thenounproject.com/png/1916332-200.png" style="width: 16px; vertical-align: middle;"></a>
+				  	</div>
+
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+
+					<div class="list-item">
+				  	<span class="block-timestamp">Today 2:38 PM</span>
+				  	<div class="title">
+				  		Observations on the <a href="#">dashboard</a>
+				  	</div>
+				  	<div class="controls">
+				  		<a href="#">Show more <img src="https://static.thenounproject.com/png/1916332-200.png" style="width: 16px; vertical-align: middle;"></a>
+				  	</div>
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div> 	
+
+				  <div class="list-item">
+				  	<img src="https://rumin.atlassian.net/s/-l129dr/b/20/b6b48b2829824b869586ac216d119363/_/favicon-software.ico" class="icon">&nbsp;
+				  	Jira <span class="block-timestamp">  &nbsp;· Today 2:21 PM</span>
+				  	<div class="title">
+				  		Issue: <a href="#">Design for Experiences carousel on home page</a>
+				  	</div>
+				  	<div class="url">https://mail.google.com/.../FMfcgxwGCbJBpRRQnxGzGvgxFpCpxkDt</div>
+				  	<div class="controls">
+				  		<a href="#">Show more <img src="https://static.thenounproject.com/png/1916332-200.png" style="width: 16px; vertical-align: middle;"></a>
+				  	</div>
+
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+
+				  <div class="list-item">
+				  	<img src="https://www2.deloitte.com/content/dam/resources/deloitte/icons/favicon.ico" class="icon"> 
+				  	Web <span class="block-timestamp">  &nbsp;· Today 2:07 PM</span>
+				  	<div class="title">
+				  		<a href="#">2019 Travel, Transportation, and Hospitality Industry Outlook | Deloitte US</a>
+				  	</div>
+				  	<div class="url">https://www2.deloitte.com/us/.../travel-hospitality-industry-outlook.html</div>
+				  	<div class="controls">
+					  	<div class="control">
+					  		+ Add notes
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-link"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-clone"></i>
+					  	</div>
+					  	<div class="control">
+					  		<i class="fa fa-plus-circle"></i>
+					  	</div>
+				  	</div>
+				  </div>
+			  </div>
+
+		  </div>
+    </div> -->
+  </body>
+
+  <script src="{% static "frontend/main.js" %}"></script>
+</html>

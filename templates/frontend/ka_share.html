@@ -1,0 +1,19 @@
+<div class="text-center">
+  <div class="mt-5" style="margin-bottom: 5em;">
+    <a id="fb_share" style="color: #666" href="" target="_blank"><i class="fa fa-facebook icon"></i></a>
+
+    <a id="twitter_share" style="color: #666" href="" target="_blank"><i class="fa fa-twitter icon"></i></a>
+
+    <a id="linkedin_share" style="color: #666" href="" target="_blank"><i class="fa fa-linkedin icon"></i></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  $('#fb_share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + location.href)
+
+  $('#twitter_share').attr('href', 'https://twitter.com/intent/tweet?url=' + location.href + '&text=')
+
+  $('#linkedin_share').attr('href', 'https://www.linkedin.com/shareArticle?mini=true&source=Knowledge+Artist+&summary=&url=' + location.href)
+})
+</script>

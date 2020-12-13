@@ -1,0 +1,53 @@
+{% include 'frontend/ka_articles_data.html' %}
+
+<style>
+	.caret-icon {
+		height: 30px;
+	}
+</style>
+
+<div class="col-md-9 mx-auto" style="margin-bottom: 6em;">
+	<div class="flex">
+		<div id="prev_article_btn">
+			<a id="prev_article_url" href="" style="color: #777;">
+				<img src="https://storage.googleapis.com/rumin-gcs-bucket/static/caret-left.svg" class="caret-icon icon">
+			  <span id="prev_article_title">Prev</span>
+			</a>
+		</div>
+
+		<div class="right-side">
+			<a id="next_article_url" href="" style="color: #777;">
+			  <span id="next_article_title">Next</span>
+				<img src="https://storage.googleapis.com/rumin-gcs-bucket/static/caret-right.svg" class="caret-icon icon">
+			</a>
+		</div>
+	</div>
+</div>
+
+<script>
+$(function() {
+	let articleIndex = window.articles.map(a => a.url).indexOf(location.href)
+	if (articleIndex < 0) {
+		articleIndex = 0
+	}
+
+	if (articleIndex == 0) {
+		$('#prev_article_btn').hide()
+	}
+	else if (articleIndex === articles.length-1) {
+		$('#next_article_btn').hide()
+	}
+	else {
+		const prevArticle = articles[articleIndex-1]
+		$('#prev_article_url').attr('href', prevArticle.url)
+		$('#prev_article_title').text(prevArticle.title)
+	}
+
+	if (articleIndex < articles.length) {
+		const nextArticle = articles[articleIndex+1]
+		$('#next_article_url').attr('href', nextArticle.url)
+		$('#next_article_title').text(nextArticle.title)
+	}
+
+})
+</script>
