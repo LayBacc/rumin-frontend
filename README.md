@@ -1,4 +1,4 @@
-# Rumin (Frontend)
+# Rumin
 This is the full frontend code for the [Rumin](https;//getrumin.com) web app, a visual canvas for connected ideas. 
 
 It provides a workspace to visually flesh out your ideas. Rearrange them. And connect them.
