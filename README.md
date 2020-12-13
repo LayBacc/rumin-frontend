@@ -1,6 +1,8 @@
 # Rumin (Frontend)
 This is the full frontend code for the [Rumin](https;//getrumin.com) web app, a visual canvas for connected ideas. 
+
 It provides a workspace to visually flesh out your ideas. Rearrange them. And connect them.
+
 Rumin comes with a [web clipper browser extension](https://github.com/jhlyeung/rumin-web-clipper) (also open source), for capturing learnings as you go.
 
 ## Demo
